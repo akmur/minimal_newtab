@@ -240,9 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateShortcutDisplay() {
-    const instructionParagraph = document.getElementById(
-      "shortcut-instruction-paragraph",
-    );
     const howToUseEl = document.getElementById("how-to-use");
 
     if (
@@ -262,16 +259,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         if (toggleCommand && toggleCommand.shortcut) {
           const shortcut = formatShortcut(toggleCommand.shortcut);
-          if (instructionParagraph) {
-            let html = `<strong id="shortcut-instruction">${shortcut}</strong> — Open command overlay`;
-            if (optionsCommand && optionsCommand.shortcut) {
-              html += `<br><strong>${formatShortcut(optionsCommand.shortcut)}</strong> — Open options`;
-            }
-            if (sidebarCommand && sidebarCommand.shortcut) {
-              html += `<br><strong>${formatShortcut(sidebarCommand.shortcut)}</strong> — Toggle sidebar`;
-            }
-            instructionParagraph.innerHTML = html;
-          }
           if (howToUseEl) {
             howToUseEl.style.display = "block";
             const usageEl = document.getElementById("shortcut-usage");
@@ -286,15 +273,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           }
         } else {
-          if (instructionParagraph) {
-            instructionParagraph.innerHTML = `Set a shortcut at <a href="#" id="open-shortcuts-inline" style="color:inherit;">chrome://extensions/shortcuts</a> to use keyboard navigation.`;
-            document
-              .getElementById("open-shortcuts-inline")
-              .addEventListener("click", (e) => {
-                e.preventDefault();
-                chrome.tabs.create({ url: "chrome://extensions/shortcuts" });
-              });
-          }
           if (howToUseEl) howToUseEl.style.display = "none";
         }
       });

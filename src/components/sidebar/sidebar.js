@@ -143,10 +143,11 @@ function renderSidebar(settings) {
 }
 
 function toggleSidebarVisibility() {
+    const settings = JSON.parse(localStorage.getItem('settings') || '{}');
+    if (!settings.enableKeyboardNav) return;
     const sidebar = document.getElementById('sidebar');
     if (!sidebar || sidebar.style.display === 'none') return;
     sidebar.classList.toggle('minimised');
-    const settings = JSON.parse(localStorage.getItem('settings') || '{}');
     updateCustomizeVisibility(settings);
 }
 
