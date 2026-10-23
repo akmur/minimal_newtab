@@ -56,6 +56,7 @@ if (settings.weather) {
   renderWeather(settings);
 } else {
   document.getElementById("weather").style.display = "none";
+  document.getElementById("weather-forecast").style.display = "none";
 }
 
 if (settings.bookmarks) {

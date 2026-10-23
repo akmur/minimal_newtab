@@ -1,5 +1,61 @@
 .weather {
     font-size: 1.4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     color: inherit;
+}
+
+.weather-forecast {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: inherit;
+}
+
+.weather-forecast:empty {
+    display: none;
+}
+
+.forecast-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    min-width: 2.5rem;
+}
+
+.forecast-hour {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.forecast-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.4rem;
+}
+
+.forecast-icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.forecast-temp {
+    font-weight: bold;
+}
+
+.forecast-precip {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.forecast-precip svg {
+    width: 0.7rem;
+    height: 0.7rem;
 }
